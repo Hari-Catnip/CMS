@@ -8,8 +8,8 @@
       // Ensure it starts with '/'
       const cleanPath = fullPath.replace(/^\/CMS/, '');
       // Redirect to root with ?redirect=/full/path
-      const newUrl = '/CMS/?redirect=' + encodeURIComponent(cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath);
-      window.location.href(newUrl);
+      const newUrl = '/CMS/nav?redirect=' + encodeURIComponent(cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath);
+      window.location.replace(newUrl);
     </script>
     <title>Redirecting...</title>
   </head>
