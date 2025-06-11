@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <meta charset="UTF-8" />
     <script>
-      // Redirect to root with original path preserved
-      const redirectTo = location.pathname.replace(/^\/CMS/, '');
-      location.replace('/CMS/?redirect=' + redirectTo);
+      // Capture the full path user tried to access
+      const fullPath = window.location.pathname + window.location.search + window.location.hash;
+      // Redirect to root of the SPA with original path encoded
+      const newUrl = '/CMS/' + encodeURIComponent(fullPath.replace('/CMS', ''));
+      window.location.replace(newUrl);
     </script>
+    <title>Redirecting...</title>
   </head>
   <body>
     Redirecting...
