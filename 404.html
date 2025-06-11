@@ -6,7 +6,7 @@
       // Capture the full path user tried to access
       const fullPath = window.location.pathname + window.location.search + window.location.hash;
       // Redirect to root of the SPA with original path encoded
-      const newUrl = '/CMS/' + encodeURIComponent(fullPath.replace('/CMS', ''));
+      const newUrl = '/CMS/?redirect=' + encodeURIComponent(fullPath.replace('/CMS', ''));
       window.location.replace(newUrl);
     </script>
     <title>Redirecting...</title>
