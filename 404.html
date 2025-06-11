@@ -2,15 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <!-- <script>
+    <script>
       // Get the full original path
       const fullPath = window.location.pathname + window.location.search + window.location.hash;
       // Ensure it starts with '/'
       const cleanPath = fullPath.replace(/^\/CMS/, '');
       // Redirect to root with ?redirect=/full/path
       const newUrl = '/CMS/?redirect=' + encodeURIComponent(cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath);
-      window.location.replace(newUrl);
-    </script> -->
+      window.location.href(newUrl);
+    </script>
     <title>Redirecting...</title>
   </head>
   <body>
