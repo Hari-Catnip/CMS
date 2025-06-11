@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <script>
-      // Capture the full path user tried to access
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    (function() {
+      const basePath = '/CMS';
       const fullPath = window.location.pathname + window.location.search + window.location.hash;
-      // Redirect to root of the SPA with original path encoded
-      const newUrl = '/CMS/asd?redirect=' + encodeURIComponent(fullPath.replace('/CMS', ''));
-      window.location.replace(newUrl);
-    </script>
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    Redirecting...
-  </body>
+      let redirectPath = fullPath.startsWith(basePath)
+        ? fullPath.slice(basePath.length)
+        : fullPath;
+      if (!redirectPath.startsWith('/')) {
+        redirectPath = '/' + redirectPath;
+      }
+      const redirectUrl = basePath + '/?redirect=' + encodeURIComponent(redirectPath);
+      window.location.replace(redirectUrl);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
 </html>
