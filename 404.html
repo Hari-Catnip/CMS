@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      // Get the full original path
+      // Capture the full path user tried to access
       const fullPath = window.location.pathname + window.location.search + window.location.hash;
-      // Ensure it starts with '/'
-      const cleanPath = fullPath.replace(/^\/CMS/, '');
-      // Redirect to root with ?redirect=/full/path
-      const newUrl = '/CMS/nav?redirect=' + encodeURIComponent(cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath);
+      // Redirect to root of the SPA with original path encoded
+      const newUrl = '/CMS/asd?redirect=' + encodeURIComponent(fullPath.replace('/CMS', ''));
       window.location.replace(newUrl);
     </script>
     <title>Redirecting...</title>
