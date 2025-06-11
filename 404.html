@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; URL=/" />
+    <script>
+      // Redirect to root with original path preserved
+      const redirectTo = location.pathname.replace(/^\/CMS/, '');
+      location.replace('/CMS/?redirect=' + redirectTo);
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
